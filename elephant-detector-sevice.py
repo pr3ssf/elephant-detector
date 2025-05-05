@@ -30,12 +30,12 @@ UPLOAD_SUBFOLDER = 'uploads'
 PROCESSED_SUBFOLDER = 'processed'
 app.config['UPLOAD_FOLDER'] = os.path.join(basedir, 'static', UPLOAD_SUBFOLDER)
 app.config['PROCESSED_FOLDER'] = os.path.join(basedir, 'static', PROCESSED_SUBFOLDER)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'reports.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database/reports.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize DB and model
 db = SQLAlchemy(app)
-model = YOLO(os.path.join(basedir, 'yolo11n_1.pt'))
+model = YOLO(os.path.join(basedir, 'models/yolo11n_1.pt'))
 
 # Progress tracking
 PROGRESS = {}
